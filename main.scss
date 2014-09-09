@@ -1,0 +1,114 @@
+/* VARIABLES */
+
+$blue : #00A0B0;
+$brown : #6A4A3C;
+$red : #CC333F;
+$orange : #EB6841;
+$yellow : #EDC951;
+$black: #222;
+$white: #eee;
+
+$shadow-white: rgba(255, 255, 255, 0.3);
+$shadow-black: rgba(0, 0, 0, 0.2);
+
+$font-userinput: Kaiti SC, Noto, cursive;
+$font-computer: Noto, Verdana, sans-serif;
+
+/* INCLUDES & MIXINS */
+
+$box-shadow: 2px  2px 2px $shadow-black,
+             1px  1px 1px $shadow-white inset,
+            -1px -1px 1px $shadow-black inset;
+
+@mixin background-lined {
+  line-height: 1.2em; //line-height and padding are necessary to align text and lines
+  padding: 1.4em 1em 1em 1.2em;
+  background-color: #fff;
+  background-image: linear-gradient(90deg, transparent 0.95em, #abced4 0.95em, #abced4 1.05em, transparent 1.05em), linear-gradient(#eee .1em, transparent .1em);
+  background-size: 100% 1.2em;
+}
+
+/* MAIN */
+
+html {
+  background-color: $blue;
+}
+
+body {
+	margin: auto;
+  max-width: 40em;
+}
+.container {
+  margin: 1em;
+  padding: 0.3em 1em 0.1em 1em;
+  background-color: $white;
+  box-shadow: $box-shadow;
+
+  font-family: $font-computer;
+  color: $black;
+}
+
+.text {
+	padding: 0.5em;
+
+	background-color: #ddd;
+  @include background-lined;
+
+  font-family: $font-userinput;
+  color: #222;
+  font-size: 1.5em;
+
+  box-shadow: 1px 1px 3px $shadow-black;
+}
+
+h1 {
+  text-shadow: 1px 1px 1px white,
+    -1px -1px 1px rgba(0, 0, 0, 0.05);
+  font-size: 1.3em;
+  color: $red;
+}
+
+/* MODULES */
+
+/* hanzis-array */
+.hanzis-array {
+  margin: 1em 0 0 0;
+  padding: 0;
+
+  list-style-type: none;
+}
+.hanzis-array li {
+  display: inline-block;
+  margin: 0 0.5em 0 0;
+}
+.hanzis-array__hanzi {
+  display: inline-block;
+  padding: 0.1em 0.2em;
+  margin: 0.1em;
+	font-size: 2em;
+  color: #222;
+  background-color: $yellow;
+  border-radius: 0.05em;
+  box-shadow: $box-shadow;
+}
+.hanzis-array__quantity {
+  font-size: 0.8em;
+  color: #555;
+}
+
+/* CONTENTEDITABLE */
+span[contenteditable="true"] {
+  //display: inline-block;
+  padding: 0.3em;
+  background-color: $shadow-black;
+  border: 2px solid $white;
+  border-radius: 2px;
+}
+span[contenteditable="true"]:focus,
+span[contenteditable="true"]:target,{
+  color: $blue;
+  border: 2px solid $blue;
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}

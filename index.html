@@ -1,1 +1,30 @@
-<h1>GET SOME HANZIS</h1>
+<html>
+    <head>
+
+        <meta charset="utf-8">
+        <title>Get all the Hanzis !</title>
+        <meta name="description" content="">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+        <meta http-equiv="cleartype" content="on">
+
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+
+        <!--When looking at a text, the card may show the most used hanzi, in order to learn those first and understand more of the text faster -->
+        <!-- http://marekje.github.io/blog/2014/07/23/most-used-hanzis/ -->
+        <!--现在，我再也不为每天来学校的交通难题发愁了。7月7日，家住老城区、工作在南区的福建水，，电学院老师魏纯雅对正在调研城市公共交通课题的市政协委员说。随着19路公交线路。。正式开通，给南区居民和学校师生出行带来了极大的便利。-->
+        <div class="container">
+            <h1>Get all the Hanzis !</h1>
+            <p>Write or copy/paste a text here :</p>
+            <p class="text" id="text" contenteditable="true">现在，我再也不为每天来学校的交通难题发愁了。7月7日，家住老城区、工作在南区的福建水，，电学院老师魏纯雅对正在调研城市公共交通课题的市政协委员说。随着19路公交线路。。正式开通，给南区居民和学校师生出行带来了极大的便利。</p>
+            <p>The <span id="number-of-hanzis" contenteditable="true">10</span> most used characters in this text are :</p>
+            <p id="result"></p>
+        </div>
+
+        <script src="js/main.js"></script>
+
+    </body>
+</html>
